@@ -30,7 +30,7 @@ public class JwTokenAPI {
 		atoken.setSecret(appscret);
 		JSONObject result = WeiXinReqService.getInstance().doWeinxinReqJson(atoken);
 		// 正常返回
-		newAccessToken = result.getString("access_token");;
+		newAccessToken = result.getString("access_token");
 		return newAccessToken;
 	}
 	 

@@ -1,9 +1,6 @@
 package org.jeewx.api.core.req;
 
-import java.io.IOException;
-
 import net.sf.json.JSONObject;
-
 import org.jdom.JDOMException;
 import org.jeewx.api.core.annotation.ReqType;
 import org.jeewx.api.core.exception.WexinReqException;
@@ -13,6 +10,8 @@ import org.jeewx.api.core.req.model.WeixinReqConfig;
 import org.jeewx.api.core.req.model.WeixinReqParam;
 import org.jeewx.api.core.util.WeiXinConstant;
 import org.jeewx.api.core.util.WeiXinReqUtil;
+
+import java.io.IOException;
 
 /**
  * 获取微信接口的信息
@@ -72,6 +71,7 @@ public class WeiXinReqService {
 			WeiXinReqHandler handler = WeiXinReqUtil.getMappingHander(objConfig.getMappingHandler());
 			strReturnInfo = handler.doRequest(weixinReqParam);
 		}
+		System.out.println("doWeixinReq"+strReturnInfo);
 		return strReturnInfo;
 	}
 	
@@ -88,6 +88,7 @@ public class WeiXinReqService {
 		if(error !=null && Integer.parseInt(error.toString())!=0){
 			throw new WexinReqException(result.toString());
 		}
+		System.out.println(result.toString());
 		return result;
 	}
 

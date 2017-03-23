@@ -4,7 +4,7 @@
 	<groupId>org.jeewx</groupId>
 	<artifactId>jeewx-api</artifactId>
 	<version>1.0.5</version>
-
+<!--用于配置分发管理，配置相应的产品发布信息,主要用于发布，在执行mvn deploy后表示要发布的位置-->
 	<distributionManagement>  
 	  <repository>
 	    <id>jeecg</id>  
@@ -35,11 +35,12 @@
 	</properties>
 
 	<dependencies>
-		<!-- commons-beanutils -->
+		<!-- commons-beanutils 主要提供了对于JavaBean进行各种操作。 -->
 		<dependency>
 			<groupId>commons-beanutils</groupId>
 			<artifactId>commons-beanutils</artifactId>
 			<version>${commons-beanutils.version}</version>
+			<!--   外在告诉maven你只包括指定的项目，不包括相关的依赖。此因素主要用于解决版本冲突问题-->
 			<exclusions>
 				<exclusion>
 					<groupId>commons-logging</groupId>
